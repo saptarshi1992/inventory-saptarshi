@@ -11,8 +11,16 @@ export default class ProductController {
     // let products = ProductModel.get();
     let products = ProductModel.fetchProducts();
     console.log(products);
-    res.render("products",{products:products})
+    res.render("products", { products: products });
     //console.log("Sending file:", filePath);
     //res.sendFile(filePath);
+  }
+  addProducts(req, res) {
+    return res.render("new-product");
+  }
+
+  addnewProducts(req,res){
+   console.log(req.body)
+   res.render("products", { products: products });
   }
 }
